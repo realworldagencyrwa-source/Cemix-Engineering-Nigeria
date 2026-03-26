@@ -44,21 +44,6 @@ section[id] {
 
 /* AI Chat Widget Mobile Positioning */
 @media (max-width: 768px) {
-  /* Position the VG_OVERLAY_CONTAINER itself to control closed bubble position */
-  #VG_OVERLAY_CONTAINER {
-    position: fixed !important;
-    bottom: 80px !important;
-    right: 16px !important;
-    z-index: 9999 !important;
-  }
-
-  /* Target ONLY the closed chat bubble button container */
-  #VG_OVERLAY_CONTAINER > div:first-child {
-    position: fixed !important;
-    bottom: 80px !important;
-    right: 16px !important;
-  }
-
   /* Target the button/bubble iframe specifically - position it lower */
   #VG_OVERLAY_CONTAINER > div > iframe[style*="width: 60px"],
   #VG_OVERLAY_CONTAINER > div > iframe[style*="width: 70px"],
