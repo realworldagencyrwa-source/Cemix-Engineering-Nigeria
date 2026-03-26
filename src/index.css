@@ -45,13 +45,11 @@ section[id] {
 /* AI Chat Widget Mobile Positioning */
 @media (max-width: 768px) {
   /* Target the button/bubble iframe specifically - position it lower */
-  #VG_OVERLAY_CONTAINER > div > iframe[style*="width: 60px"],
-  #VG_OVERLAY_CONTAINER > div > iframe[style*="width: 70px"],
-  #VG_OVERLAY_CONTAINER > div > iframe[style*="width: 80px"] {
-    position: fixed !important;
-    bottom: 55px !important;
-    right: 6px !important;
-  }
+   #VG_OVERLAY_CONTAINER .vg-widget-controls-container {
+  bottom: 20px !important;
+  right: 8px !important;
+  left: unset !important;
+}
 
   /* Fix the OPENED chat panel to be properly aligned on mobile */
   #VG_OVERLAY_CONTAINER > div[style*="width"][style*="height"],
