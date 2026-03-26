@@ -3,6 +3,12 @@ import { WhatsAppIcon, TikTokIcon } from './SocialIcons';
 import { useState, FormEvent } from 'react';
 import { useSiteSettings } from '../contexts/SiteContext';
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export default function Contact() {
   const { settings } = useSiteSettings();
   const [formData, setFormData] = useState({
@@ -32,6 +38,12 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', message: '' });
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-17951423833/BqBuCNKxjvwbENn68-9C'
+          });
+        }
       } else {
         setSubmitStatus('error');
       }
