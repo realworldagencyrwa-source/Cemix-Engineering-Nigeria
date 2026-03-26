@@ -5,12 +5,8 @@ import { WhatsAppIcon, TikTokIcon } from './SocialIcons';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -29,10 +25,10 @@ export default function Header() {
           </div>
 
           <nav className="hidden md:flex space-x-6 items-center">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-brand-500 transition">Home</button>
-            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-brand-500 transition">Products</button>
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-brand-500 transition">Services</button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-brand-500 transition">Contact</button>
+            <a href="#home" className="text-gray-700 hover:text-brand-500 transition">Home</a>
+            <a href="#products" className="text-gray-700 hover:text-brand-500 transition">Products</a>
+            <a href="#services" className="text-gray-700 hover:text-brand-500 transition">Services</a>
+            <a href="#contact" className="text-gray-700 hover:text-brand-500 transition">Contact</a>
             <div className="flex space-x-3">
               <a href="https://www.facebook.com/share/1AG4xJMGrP/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-brand-500 hover:text-brand-600 transition" title="Facebook">
                 <Facebook size={20} />
@@ -59,10 +55,10 @@ export default function Header() {
 
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 space-y-3">
-            <button onClick={() => scrollToSection('home')} className="block text-gray-700 hover:text-brand-500 transition">Home</button>
-            <button onClick={() => scrollToSection('products')} className="block text-gray-700 hover:text-brand-500 transition">Products</button>
-            <button onClick={() => scrollToSection('services')} className="block text-gray-700 hover:text-brand-500 transition">Services</button>
-            <button onClick={() => scrollToSection('contact')} className="block text-gray-700 hover:text-brand-500 transition">Contact</button>
+            <a href="#home" onClick={handleLinkClick} className="block text-gray-700 hover:text-brand-500 transition">Home</a>
+            <a href="#products" onClick={handleLinkClick} className="block text-gray-700 hover:text-brand-500 transition">Products</a>
+            <a href="#services" onClick={handleLinkClick} className="block text-gray-700 hover:text-brand-500 transition">Services</a>
+            <a href="#contact" onClick={handleLinkClick} className="block text-gray-700 hover:text-brand-500 transition">Contact</a>
             <div className="flex space-x-3 pt-2">
               <a href="https://www.facebook.com/share/1AG4xJMGrP/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-brand-500 hover:text-brand-600 transition" title="Facebook">
                 <Facebook size={20} />
