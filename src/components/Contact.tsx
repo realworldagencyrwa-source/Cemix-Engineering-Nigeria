@@ -68,7 +68,7 @@ export default function Contact() {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
+              <div id="location" className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="text-brand-500" size={24} />
                 </div>
