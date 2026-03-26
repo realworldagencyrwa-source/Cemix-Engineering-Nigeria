@@ -49,8 +49,8 @@ section[id] {
   #VG_OVERLAY_CONTAINER > div > iframe[style*="width: 70px"],
   #VG_OVERLAY_CONTAINER > div > iframe[style*="width: 80px"] {
     position: fixed !important;
-    bottom: 80px !important;
-    right: 16px !important;
+    bottom: 55px !important;
+    right: 6px !important;
   }
 
   /* Fix the OPENED chat panel to be properly aligned on mobile */
