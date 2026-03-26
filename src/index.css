@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjust scroll position to account for fixed header */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 @layer utilities {
   .animate-fade-in {
     animation: fade
@@ -29,5 +39,25 @@
       transform: scale(1) translateY(0);
       filter: blur(0);
     }
+  }
+}
+
+/* AI Chat Widget Mobile Positioning */
+@media (max-width: 768px) {
+  /* Target the VG widget container */
+  #VG_OVERLAY_CONTAINER,
+  #VG_OVERLAY_CONTAINER > div,
+  [id*="vg-"],
+  [class*="vg-button"],
+  [class*="vg-widget"] {
+    bottom: 24px !important;
+    right: 16px !important;
+  }
+
+  /* Ensure the bubble itself is positioned correctly */
+  #VG_OVERLAY_CONTAINER iframe,
+  #VG_OVERLAY_CONTAINER > div > div {
+    bottom: 24px !important;
+    right: 16px !important;
   }
 }
